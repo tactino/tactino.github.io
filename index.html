@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuo Gou - Academic Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Replace 'profile.jpg' with your actual photo file -->
+            <img src="profile.jpg" alt="Zuo Gou" class="profile-photo">
+            
+            <div class="name">Zuo Gou</div>
+            <div class="affiliation">
+                Undergraduate Student<br>
+                Dept. of Automation<br>
+                Tsinghua University
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:gouz23@mails.tsinghua.edu.cn">Email Me</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Beijing, China</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+86-187-8110-6300</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/Gotham-Zolio" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- Add other links like LinkedIn, Google Scholar here -->
+                <!-- 
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fas fa-graduation-cap"></i></a>
+                -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- About Me -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I am an undergraduate student at <a href="https://www.tsinghua.edu.cn/en/" target="_blank">Tsinghua University</a>, majoring in Automation. 
+                    My research interests lie at the intersection of <strong>Embodied AI</strong>, <strong>Reinforcement Learning</strong>, and <strong>Generative Models</strong> (Diffusion/Flow-matching).
+                </p>
+                <p>
+                    I am particularly interested in building generalizable <strong>Vision-Language-Action (VLA) policies</strong> that can operate robustly in the physical world. 
+                    Currently, I am working on bridging the gap between high-level semantic reasoning and low-level contact-rich control.
+                </p>
+            </section>
+
+            <!-- News (Optional) -->
+            <!-- 
+            <section id="news">
+                <h2>News</h2>
+                <ul>
+                    <li><strong>[Dec 2025]</strong> Updated my CV.</li>
+                </ul>
+            </section>
+            -->
+
+            <!-- Education -->
+            <section id="education">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Tsinghua University <span class="date-location">Sep 2023 -- Expected Jun 2027</span></h3>
+                    <span class="subtitle">B.Eng. in Automation (Xinya College & Dept. of Automation)</span>
+                    <ul>
+                        <li><strong>GPA:</strong> 3.8/4.0 (Major GPA: 3.84/4.0)</li>
+                        <li><strong>Honors:</strong> Tsinghua University Comprehensive Scholarship (2023-2025), Friends of Tsinghua University—Luo Yuehua Scholarship.</li>
+                        <li><strong>Relevant Coursework:</strong> Embodied AI, Machine Learning, Control Theory, Signals & Systems, Data Structures, Probability & Statistics.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Research Experience -->
+            <section id="research">
+                <h2>Research Experience</h2>
+
+                <div class="research-item">
+                    <h3>Huazhe Xu Lab (IIIS, Tsinghua University) <span class="date-location">Jul 2025 -- Present</span></h3>
+                    <span class="subtitle">Research Assistant | Advisor: Prof. Huazhe Xu</span>
+                    <ul>
+                        <li><strong>Project: VLARL - Distributed RL for VLA Policies</strong></li>
+                        <li>Architected <strong>VLARL</strong>, a universal distributed post-training framework designed to fine-tune large Vision-Language-Action models using Reinforcement Learning.</li>
+                        <li>Implemented heterogeneous gradient synchronization to enable efficient training of massive Diffusion Backbones alongside RL policy heads (supporting PPO, SAC, GRPO).</li>
+                        <li>Designed a decoupled "Env Client" architecture that allows dynamic scalability across GPU clusters and CPU nodes, significantly optimizing inference pipelines and resolving sampling bottlenecks.</li>
+                        <li>Analyzed the trade-offs between on-policy stability and off-policy sample efficiency for generative policies.</li>
+                    </ul>
+                </div>
+
+                <div class="research-item" style="margin-top: 20px;">
+                    <h3>Yebin Liu Lab (Dept. of Automation, Tsinghua University) <span class="date-location">Sept 2024 -- Jun 2025</span></h3>
+                    <span class="subtitle">Research Assistant | Advisor: Prof. Yebin Liu</span>
+                    <ul>
+                        <li><strong>Project: Generative Dexterous Grasping</strong></li>
+                        <li>Constructed high-fidelity dexterous manipulation environments and established robust data pipelines for demonstration collection.</li>
+                        <li>Engineered a custom simulation loop to stabilize the contact dynamics of the MANO hand model.</li>
+                        <li>Developed a residual-guided diffusion model utilizing continuous correspondence embeddings and a novel penetration loss to synthesize physically plausible hand-object interactions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2>Publications & Preprints</h2>
+                <ul>
+                    <li>
+                        <strong>Benchmarking Vision--Language--Action Policies: Finetuning Pretrained Generative-Model-Based Policies with Multiple Reinforcement Learning Algorithms.</strong><br>
+                        Lu, C., <strong>Gou, Z.</strong>, et al.<br>
+                        <em>Manuscript in preparation (2026).</em>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <table class="skills-table">
+                    <tr>
+                        <td class="skill-category">Programming</td>
+                        <td>Python (NumPy, PyTorch), C++, MATLAB, Shell, LaTeX</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-category">Frameworks</td>
+                        <td>PyTorch, TensorFlow, Robomimic, OpenAI Gym, MuJoCo</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-category">Tools</td>
+                        <td>Git, Docker, Linux, tmux, Weights & Biases (wandb)</td>
+                    </tr>
+                    <tr>
+                        <td class="skill-category">Languages</td>
+                        <td>English (Fluent), Chinese (Native)</td>
+                    </tr>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
