@@ -5,56 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuo Gou</title>
     <meta name="description" content="Zuo Gou — undergraduate student at Tsinghua University working on embodied AI, multi-agent robot learning, and diffusion models.">
+    <meta name="theme-color" content="#080b21">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <!-- Fonts are self-hosted (fonts/, SIL OFL) so the page renders where Google Fonts is blocked. -->
+    <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <img src="profile.jpg" alt="Zuo Gou" class="profile-photo">
+    <div class="page">
+        <!-- Sidebar: the portrait's own night-blue background becomes the column -->
+        <header class="sidebar">
+            <div class="sidebar-inner">
+                <img src="profile.jpg" alt="Portrait of Zuo Gou" class="portrait" width="804" height="804">
 
-            <div class="name">Zuo Gou</div>
-            <div class="affiliation">
-                Undergraduate Student<br>
-                Dept. of Automation<br>
-                Tsinghua University
-            </div>
-
-            <!-- Quick links. Add the CV once the PDF is in this folder:
-                 <span class="sep">·</span><a href="cv.pdf">CV</a>          -->
-            <div class="quick-links">
-                <a href="mailto:gouz23@mails.tsinghua.edu.cn">Email</a>
-                <span class="sep">·</span>
-                <a href="cv.pdf">CV</a>
-                <span class="sep">·</span>
-                <a href="https://github.com/tactino" target="_blank" rel="noopener">GitHub</a>
-            </div>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>gouz23@mails.tsinghua.edu.cn</span>
+                <div class="identity">
+                    <h1 class="name">Zuo Gou</h1>
+                    <p class="affiliation">
+                        Undergraduate Student<br>
+                        Dept. of Automation<br>
+                        Tsinghua University
+                    </p>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-location-dot"></i>
-                    <span>Ithaca, NY</span>
-                </div>
+
+                <dl class="contact">
+                    <div>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:gouz23@mails.tsinghua.edu.cn">gouz23@<wbr>mails.tsinghua.edu.cn</a></dd>
+                    </div>
+                    <div>
+                        <dt>CV</dt>
+                        <dd><a href="cv.pdf">PDF</a></dd>
+                    </div>
+                    <div>
+                        <dt>GitHub</dt>
+                        <dd><a href="https://github.com/tactino" target="_blank" rel="noopener">tactino</a></dd>
+                    </div>
+                    <div>
+                        <dt>Location</dt>
+                        <dd>Ithaca, NY</dd>
+                    </div>
+                </dl>
             </div>
-        </aside>
+        </header>
 
         <!-- Main Content -->
         <main class="main-content">
 
             <!-- About -->
-            <section id="about">
-                <h2>About</h2>
-                <p>
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading" class="visually-hidden">About</h2>
+                <p class="lede">
                     I am an undergraduate student in Automation at <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a>.
                     I work on <strong>embodied AI and robot learning</strong>, <strong>multi-agent coordination and inter-robot communication</strong>,
                     <strong>reinforcement learning</strong>, and <strong>diffusion-based generative models</strong>.
@@ -82,15 +85,15 @@
                 <h2>Manuscripts</h2>
                 <ul class="pub-list">
                     <li>
-                        <span class="pub-title">Humanoid2Humanoid: Shared Sensing for Cooperative Loco-Manipulation.</span><br>
+                        <span class="pub-title">Humanoid2Humanoid: Shared Sensing for Cooperative Loco-Manipulation.</span>
                         <!-- AUTHORS: complete the list -->
-                        <span class="pub-authors"><strong>Zuo Gou</strong> et al., Wei-Chiu Ma.</span><br>
+                        <span class="pub-authors"><strong>Zuo Gou</strong> et al., Wei-Chiu Ma.</span>
                         <span class="pub-venue">Under review, CVPR 2027.</span>
                     </li>
                     <li>
-                        <span class="pub-title">Relative Noise Schedules in Joint Continuous&ndash;Discrete Diffusion.</span><br>
+                        <span class="pub-title">Relative Noise Schedules in Joint Continuous&ndash;Discrete Diffusion.</span>
                         <!-- AUTHORS: complete the list -->
-                        <span class="pub-authors"><strong>Zuo Gou</strong> et al.</span><br>
+                        <span class="pub-authors"><strong>Zuo Gou</strong> et al.</span>
                         <span class="pub-venue">In preparation; target ICML 2027.</span>
                     </li>
                 </ul>
@@ -100,7 +103,7 @@
             <section id="research">
                 <h2>Research Experience</h2>
 
-                <div class="research-item">
+                <div class="entry">
                     <h3>Cornell University <span class="date-location">Jun 2026 &ndash; Nov 2026</span></h3>
                     <span class="subtitle">Research Intern, Dept. of Computer Science &middot; Advisor: Prof. Wei-Chiu Ma</span>
                     <ul>
@@ -110,7 +113,7 @@
                     </ul>
                 </div>
 
-                <div class="research-item">
+                <div class="entry">
                     <h3>University of Illinois Urbana-Champaign <span class="date-location">Mar 2026 &ndash; Present</span></h3>
                     <span class="subtitle">Research Intern, Dept. of Computer Science &middot; Advisor: Prof. Ge Liu</span>
                     <ul>
@@ -120,7 +123,7 @@
                     </ul>
                 </div>
 
-                <div class="research-item">
+                <div class="entry">
                     <h3>Tsinghua University, IIIS <span class="date-location">Jul 2025 &ndash; Jan 2026</span></h3>
                     <span class="subtitle">Research Assistant &middot; Advisor: Prof. Huazhe Xu</span>
                     <ul>
@@ -128,7 +131,7 @@
                     </ul>
                 </div>
 
-                <div class="research-item">
+                <div class="entry">
                     <h3>Tsinghua University, Dept. of Automation <span class="date-location">Sep 2024 &ndash; Jun 2025</span></h3>
                     <span class="subtitle">Research Assistant &middot; Advisor: Prof. Yebin Liu</span>
                     <ul>
@@ -141,7 +144,7 @@
             <section id="education">
                 <h2>Education</h2>
 
-                <div class="education-item">
+                <div class="entry">
                     <h3>Tsinghua University <span class="date-location">Sep 2023 &ndash; Expected Jun 2027</span></h3>
                     <span class="subtitle">B.Eng. in Automation (Xinya College &amp; Dept. of Automation)</span>
                     <ul>
@@ -156,15 +159,15 @@
                 <h2>Technical Skills</h2>
                 <table class="skills-table">
                     <tr>
-                        <td class="skill-category">Programming</td>
+                        <th scope="row">Programming</th>
                         <td>Python (PyTorch), C++, CUDA, MATLAB, Shell</td>
                     </tr>
                     <tr>
-                        <td class="skill-category">Robotics &amp; simulation</td>
+                        <th scope="row">Robotics &amp; simulation</th>
                         <td>IsaacGym, Isaac Lab, MuJoCo, Legged Gym, RSL-RL</td>
                     </tr>
                     <tr>
-                        <td class="skill-category">Infrastructure</td>
+                        <th scope="row">Infrastructure</th>
                         <td>Linux, Slurm clusters, distributed multi-GPU training, Weights &amp; Biases</td>
                     </tr>
                 </table>

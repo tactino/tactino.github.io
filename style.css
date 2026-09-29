@@ -1,241 +1,352 @@
-:root {
-    --primary-color: #5e2a8e;      /* Tsinghua purple, matches the CV section headings */
-    --text-color: #1a1a1a;
-    --muted-color: #666;
-    --bg-color: #f7f7f8;
-    --sidebar-bg: #fff;
-    --link-color: #0b5cad;
-    --border-color: #e7e7ea;
-    --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+/* Source Serif 4 (Adobe, SIL OFL — see fonts/OFL.txt), latin subset, variable wght + opsz */
+@font-face {
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url("fonts/source-serif-4-latin.woff2") format("woff2");
 }
 
-* { box-sizing: border-box; }
+@font-face {
+    font-family: "Source Serif 4";
+    font-style: italic;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url("fonts/source-serif-4-latin-italic.woff2") format("woff2");
+}
+
+:root {
+    /* Night: sampled from the background of profile.jpg, so the photo has no visible edge */
+    --night: #080b21;
+    --on-night: #eeecf8;
+    --on-night-muted: #9b9ec4;
+    --on-night-link: #cbb9f5;
+
+    /* Paper side */
+    --paper: #fbfbfd;
+    --ink: #1b1a29;
+    --muted: #666580;
+    --rule: #e6e5ef;
+    --violet: #5e2a8e;         /* Tsinghua purple, same as the favicon and the CV headings */
+
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --rail: 360px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-    font-family: var(--body-font);
-    color: var(--text-color);
-    background-color: var(--bg-color);
     margin: 0;
-    padding: 0;
-    line-height: 1.65;
-    font-size: 16px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.68;
+    font-optical-sizing: auto;
+    font-variant-numeric: lining-nums;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-.container {
-    display: flex;
-    max-width: 1100px;
-    margin: 40px auto;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    border: 1px solid var(--border-color);
-    min-height: 90vh;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 260px;
-    background-color: var(--sidebar-bg);
-    padding: 44px 24px;
-    text-align: center;
-    border-right: 1px solid var(--border-color);
-    flex-shrink: 0;
-}
-
-.profile-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 18px;
-    border: 1px solid var(--border-color);
-}
-
-.name {
-    font-family: var(--heading-font);
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 6px;
-    color: #111;
-}
-
-.affiliation {
-    font-size: 0.88em;
-    color: var(--muted-color);
-    line-height: 1.5;
-}
-
-/* Quick links row: Email / CV / GitHub */
-.quick-links {
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9em;
-}
-
-.quick-links a {
-    color: var(--link-color);
-    text-decoration: none;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
     white-space: nowrap;
 }
 
-.quick-links a:hover { text-decoration: underline; }
-
-.quick-links .sep {
-    color: #c8c8cc;
-    margin: 0 6px;
+/* ---------- Layout ----------
+   Four columns: night bleed | rail | text | paper bleed.
+   The outer columns share the leftover width, so the whole composition stays centred. */
+.page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--rail) minmax(0, 50rem) minmax(0, 1fr);
+    min-height: 100vh;
 }
 
-.contact-info {
-    font-size: 0.85em;
-    text-align: left;
-    margin-top: 20px;
-    color: var(--muted-color);
+.sidebar {
+    grid-column: 1 / 3;
+    background: var(--night);
+    color: var(--on-night);
 }
 
-.contact-item {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: baseline;
-    word-break: break-word;
+.sidebar-inner {
+    width: var(--rail);
+    margin-left: auto;
+    padding-bottom: 2.5rem;
 }
 
-.contact-item i {
-    margin-right: 9px;
-    color: var(--primary-color);
-    width: 14px;
-    flex-shrink: 0;
-    text-align: center;
-}
-
-/* Main Content */
 .main-content {
-    flex-grow: 1;
-    padding: 44px 52px;
+    grid-column: 3;
+    padding: 4.75rem 4rem 6rem;
     min-width: 0;
 }
 
-section { margin-bottom: 34px; }
-section:last-child { margin-bottom: 0; }
+/* ---------- Sidebar ---------- */
+.portrait {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    /* Dissolve the jacket into the night and soften the side edges, where the photo's
+       background drifts a shade from --night; the top fade hides a light speck at the edge */
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0, #000 9%, #000 50%, transparent 90%),
+        linear-gradient(to right, transparent 0, #000 16%, #000 86%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+        linear-gradient(to bottom, transparent 0, #000 9%, #000 50%, transparent 90%),
+        linear-gradient(to right, transparent 0, #000 16%, #000 86%, transparent 100%);
+    mask-composite: intersect;
+}
+
+.identity {
+    position: relative;
+    margin-top: -5.25rem;
+    padding: 0 1.75rem;
+}
+
+.name {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--on-night);
+    text-shadow: 0 2px 18px rgba(8, 11, 33, 0.6);
+}
+
+.affiliation {
+    margin: 0.85rem 0 0;
+    font-size: 0.97rem;
+    line-height: 1.55;
+    color: var(--on-night-muted);
+}
+
+.contact {
+    margin: 2.25rem 1.75rem 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(155, 158, 196, 0.22);
+    font-size: 0.94rem;
+}
+
+.contact div {
+    display: grid;
+    grid-template-columns: 4.1rem minmax(0, 1fr);
+    gap: 0.7rem;
+    padding: 0.28rem 0;
+}
+
+.contact dt { color: var(--on-night-muted); }
+
+.contact dd {
+    margin: 0;
+    color: #d6d4e8;
+    overflow-wrap: break-word;
+}
+
+.sidebar a {
+    color: var(--on-night-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(203, 185, 245, 0.35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+.sidebar a:hover { text-decoration-color: currentColor; }
+
+/* ---------- Main text ---------- */
+p { margin: 0 0 1rem; }
+
+.lede {
+    font-size: 1.3125rem;
+    line-height: 1.52;
+    margin-bottom: 1.25rem;
+}
+
+.lede strong { font-weight: 600; }
+
+section + section { margin-top: 3.4rem; }
 
 h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 7px;
-    margin-bottom: 16px;
-    font-size: 1.08em;
+    margin: 0 0 1.15rem;
+    font-size: 1.42rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
 }
 
 h3 {
-    font-family: var(--heading-font);
-    font-size: 1.02em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+    margin: 0;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 0 0 3px;
-    color: #111;
+    line-height: 1.4;
 }
 
-p { margin: 0 0 12px; max-width: 68ch; }
-
-.subtitle {
-    font-size: 0.92em;
-    color: var(--muted-color);
-    margin-bottom: 8px;
-    display: block;
+a {
+    color: var(--violet);
+    text-decoration: underline;
+    text-decoration-color: rgba(94, 42, 142, 0.3);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
 }
 
-.date-location {
-    float: right;
-    font-size: 0.86em;
-    color: #8a8a90;
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
-}
+a:hover { text-decoration-color: currentColor; }
 
-ul { padding-left: 20px; margin: 0; }
-li { margin-bottom: 6px; max-width: 68ch; }
-
-a { color: var(--link-color); text-decoration: none; }
-a:hover { text-decoration: underline; }
 a:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--violet);
+    outline-offset: 3px;
     border-radius: 2px;
 }
 
+.sidebar a:focus-visible { outline-color: var(--on-night-link); }
+
+ul { margin: 0; padding-left: 1.15rem; }
+li { margin-bottom: 0.4rem; }
+li::marker { color: #a4a3b8; }
+
+.date-location,
+.news-date {
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums lining-nums;
+    white-space: nowrap;
+}
+
+.subtitle {
+    display: block;
+    margin: 0.1rem 0 0.6rem;
+    font-size: 0.97rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.entry + .entry { margin-top: 1.9rem; }
+
 /* News */
-.news-list { list-style: none; padding-left: 0; }
+.news-list { list-style: none; padding: 0; }
 
 .news-list li {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.55rem;
 }
 
-.news-date {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 0.86em;
-    white-space: nowrap;
-    flex-shrink: 0;
-    width: 82px;
-    padding-top: 2px;
-    font-variant-numeric: tabular-nums;
-}
+.news-date { padding-top: 0.12rem; }
 
 /* Manuscripts */
-.pub-list { list-style: none; padding-left: 0; }
+.pub-list { list-style: none; padding: 0; }
+.pub-list li + li { margin-top: 1.15rem; }
 
-.pub-list li {
-    margin-bottom: 14px;
-    padding-left: 14px;
-    border-left: 2px solid var(--border-color);
+.pub-title,
+.pub-authors,
+.pub-venue { display: block; }
+
+.pub-title { font-weight: 600; line-height: 1.45; margin-bottom: 0.15rem; }
+.pub-venue { font-style: italic; color: var(--muted); }
+
+/* Skills */
+.skills-table { border-collapse: collapse; }
+
+.skills-table th,
+.skills-table td {
+    padding: 0.3rem 0;
+    vertical-align: top;
+    text-align: left;
 }
 
-.pub-title { font-weight: 600; color: #111; }
-.pub-authors { font-size: 0.94em; }
-.pub-venue { font-size: 0.9em; color: var(--muted-color); font-style: italic; }
-
-/* Research items */
-.research-item + .research-item { margin-top: 20px; }
-
-/* Skills Table */
-.skills-table { width: 100%; border-collapse: collapse; font-size: 0.94em; }
-.skills-table td { padding: 5px 0; vertical-align: top; }
-.skill-category { font-weight: 600; width: 180px; color: #333; padding-right: 16px; }
-
-/* Responsive */
-@media (max-width: 820px) {
-    .container {
-        flex-direction: column;
-        margin: 0;
-        border: none;
-        box-shadow: none;
-    }
-
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 32px 20px;
-    }
-
-    .main-content { padding: 28px 20px; }
-
-    .date-location {
-        float: none;
-        display: block;
-        margin-bottom: 4px;
-    }
-
-    .skill-category { width: 140px; }
+.skills-table th {
+    width: 12.5rem;
+    padding-right: 1.25rem;
+    font-weight: 600;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
+/* ---------- One orchestrated moment: the portrait surfaces from the dark ---------- */
+@media (prefers-reduced-motion: no-preference) {
+    .portrait { animation: surface 1.4s cubic-bezier(0.2, 0.6, 0.2, 1) both; }
+    @keyframes surface { from { opacity: 0; } }
+}
+
+/* ---------- Desktop: the rail stays put while the text scrolls ---------- */
+@media (min-width: 901px) and (min-height: 700px) {
+    .sidebar-inner {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    :root { --rail: 320px; }
+    .main-content { padding: 4rem 3rem 5rem; }
+    .name { font-size: 2.7rem; }
+    /* Too narrow for label and address side by side: stack them */
+    .contact div { grid-template-columns: 1fr; gap: 0; padding: 0.3rem 0; }
+    .contact dt { font-size: 0.85rem; }
+}
+
+/* ---------- Narrow: the rail becomes a night header ---------- */
+@media (max-width: 900px) {
+    .page { display: block; }
+
+    .sidebar-inner {
+        width: auto;
+        max-width: 36rem;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
+    .portrait {
+        aspect-ratio: 5 / 4;
+        object-position: 50% 30%;
+    }
+
+    .identity { margin-top: -4.5rem; padding: 0 1.25rem; }
+    .name { font-size: 2.6rem; }
+    .contact { margin: 1.75rem 1.25rem 0; }
+    .contact div { grid-template-columns: 4.1rem minmax(0, 1fr); gap: 0.7rem; padding: 0.28rem 0; }
+    .contact dt { font-size: inherit; }
+
+    .main-content {
+        max-width: 38rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .lede { font-size: 1.2rem; }
+    section + section { margin-top: 2.75rem; }
+}
+
+@media (max-width: 520px) {
+    .news-list li { grid-template-columns: 1fr; gap: 0; margin-bottom: 0.8rem; }
+    .skills-table th { width: auto; }
+    .skills-table tr { display: block; padding: 0.25rem 0; }
+    .skills-table th, .skills-table td { display: block; padding: 0; }
+}
+
+/* ---------- Print: no night background on paper ---------- */
+@media print {
+    .page { display: block; }
+    .sidebar { background: none; color: var(--ink); }
+    .sidebar-inner { width: auto; padding: 0; }
+    .portrait { display: none; }
+    .identity { margin: 0; padding: 0; }
+    .name { color: var(--ink); }
+    .affiliation, .contact dt { color: var(--muted); }
+    .contact { margin: 1rem 0 0; border: 0; padding: 0; }
+    .sidebar a { color: var(--violet); }
+    .main-content { padding: 1.5rem 0 0; }
 }
