@@ -15,6 +15,16 @@
     src: url("fonts/source-serif-4-latin-italic.woff2") format("woff2");
 }
 
+/* Noto Serif SC (SIL OFL), subset to the two characters of the Chinese name */
+@font-face {
+    font-family: "Noto Serif SC Name";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/noto-serif-sc-name.woff2") format("woff2");
+    unicode-range: U+5DE6, U+82DF;
+}
+
 :root {
     /* Night: sampled from the background of profile.jpg, so the photo has no visible edge */
     --night: #080b21;
@@ -120,6 +130,17 @@ body {
     letter-spacing: -0.015em;
     color: var(--on-night);
     text-shadow: 0 2px 18px rgba(8, 11, 33, 0.6);
+}
+
+.name-zh {
+    margin-left: 0.28em;
+    font-family: "Noto Serif SC Name", "Songti SC", "SimSun", serif;
+    font-size: 0.6em;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-night-muted);
+    text-shadow: none;
+    white-space: nowrap;
 }
 
 .affiliation {
