@@ -93,7 +93,7 @@ body {
 
 .main-content {
     grid-column: 3;
-    padding: 4.75rem 4rem 6rem;
+    padding: 4.75rem 4rem 6rem 6rem;   /* wide left margin: the seals hang in it, clear of the rail */
     min-width: 0;
 }
 
@@ -284,7 +284,7 @@ li::marker { color: #a4a3b8; }
 
 .entry + .entry { margin-top: 1.9rem; }
 
-/* Institution seals (Wikimedia Commons, public domain insignia) recoloured to the one violet,
+/* Institution seals (Wikimedia Commons, public domain insignia) in each school's own colours,
    hung in the left margin so the text column keeps its edge */
 .entry { position: relative; }
 
@@ -400,7 +400,7 @@ li::marker { color: #a4a3b8; }
 
 @media (max-width: 1100px) {
     :root { --rail: 320px; }
-    .main-content { padding: 4rem 3rem 5rem; }
+    .main-content { padding: 4rem 3rem 5rem 4.75rem; }
     .name { font-size: 2.7rem; }
     .links { gap: 0.4rem; }
     .seal { left: -2.6rem; width: 1.9rem; height: 1.9rem; }
