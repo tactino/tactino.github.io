@@ -170,7 +170,8 @@ p { margin: 0 0 1rem; }
     margin-bottom: 1.25rem;
 }
 
-.lede strong { font-weight: 600; }
+/* A lighter touch than bold: the research areas stay findable without outweighing the name */
+.lede strong { font-weight: 500; }
 
 section + section { margin-top: 3.4rem; }
 
