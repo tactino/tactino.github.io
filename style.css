@@ -355,6 +355,13 @@ li::marker { color: #a4a3b8; }
     font-weight: 600;
 }
 
+/* Footer */
+.page-footer {
+    margin-top: 4.5rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
 /* ---------- One orchestrated moment: the portrait surfaces from the dark ---------- */
 @media (prefers-reduced-motion: no-preference) {
     .portrait { animation: surface 1.4s cubic-bezier(0.2, 0.6, 0.2, 1) both; }
