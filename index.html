@@ -86,9 +86,9 @@
                 <h2>News</h2>
                 <!-- Newest first. Add a line when a paper is submitted, posted to arXiv, or accepted. -->
                 <ul class="news-list">
+                    <li><span class="news-date">Sep 2026</span><span>Resumed <a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> with Chenhao Lu, now a wire protocol that lets environments running anywhere be trained by RL.</span></li>
                     <li><span class="news-date">Jun 2026</span><span>Joined Prof. Wei-Chiu Ma's group at Cornell as a research intern, working on shared perception between humanoids.</span></li>
                     <li><span class="news-date">Mar 2026</span><span>Started working with Prof. Ge Liu at UIUC on noise schedules in joint continuous&ndash;discrete diffusion.</span></li>
-                    <li><span class="news-date">Jan 2026</span><span>Wrapped up <a href="https://github.com/PlugRL/plugrl.github.io" target="_blank" rel="noopener">PlugRL</a>, a distributed RL framework for vision&ndash;language&ndash;action policies, at Tsinghua IIIS.</span></li>
                 </ul>
             </section>
 
@@ -142,7 +142,7 @@
                     <h3>Tsinghua University, IIIS <span class="date-location">Jul 2025 &ndash; Jan 2026</span></h3>
                     <span class="subtitle">Research Assistant &middot; Advisor: Prof. Huazhe Xu</span>
                     <ul>
-                        <li>Architected <a href="https://github.com/PlugRL/plugrl.github.io" target="_blank" rel="noopener">PlugRL</a>, a distributed framework for reinforcement learning on vision&ndash;language&ndash;action policies.</li>
+                        <li>Started <a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> with Chenhao Lu; the project continues as open source (see below).</li>
                     </ul>
                 </div>
 
@@ -153,6 +153,23 @@
                     <ul>
                         <li>Developed a diffusion model that generates physically plausible hand&ndash;object interaction for dexterous manipulation, with the simulation environments and demonstration pipelines it was trained on.</li>
                     </ul>
+                </div>
+            </section>
+
+            <!-- Open Source -->
+            <section id="open-source">
+                <h2>Open Source</h2>
+
+                <div class="entry">
+                    <img class="seal" src="images/logo-plugrl.png" alt="" width="36" height="36">
+                    <h3><a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> <span class="date-location">2025 &ndash; Present</span></h3>
+                    <ul>
+                        <li>With Chenhao Lu, co-developed PlugRL, a wire protocol between environments and RL trainers that lets environments on other machines, in other languages, or outside a trainer's cluster still be trained. Wrote the protocol specification and its conformance checkers.</li>
+                    </ul>
+                    <figure class="clip">
+                        <video src="media/plugrl-libero.mp4" poster="media/plugrl-libero-poster.jpg" width="224" height="224" autoplay muted loop playsinline preload="metadata" aria-label="Robot arm in a LIBERO kitchen scene, driven by &pi;0.5 through PlugRL"></video>
+                        <figcaption>&pi;0.5 acting in LIBERO through PlugRL's wire protocol: the simulator runs in its own process, the policy on the server.</figcaption>
+                    </figure>
                 </div>
             </section>
 
@@ -195,5 +212,16 @@
         </main>
     </div>
 
+    <script>
+        // Clips autoplay muted. Pause them off screen; for reduced-motion users, stop and show controls instead.
+        (() => {
+            const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            document.querySelectorAll("video[autoplay]").forEach((v) => {
+                if (still) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; return; }
+                new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()),
+                                         { threshold: 0.25 }).observe(v);
+            });
+        })();
+    </script>
 </body>
 </html>

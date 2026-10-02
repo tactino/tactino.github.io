@@ -1,8 +1,9 @@
 # Credits
 
-- **Fonts**: Source Serif 4 and Noto Serif SC, SIL Open Font License 1.1. See `fonts/README.md`.
+- **Fonts**: Source Serif 4 (Latin subset plus the single Greek glyph π) and Noto Serif SC, SIL Open Font License 1.1. See `fonts/README.md`.
 - **Icons** (mail, file-text, github, id-card, book-open, map-pin; inlined in `index.html`): [Lucide](https://lucide.dev) v0.460.0, ISC License, reproduced below.
 - **Seals** (`images/seal-*.png`, recoloured): Cornell University seal, University of Illinois seal and Tsinghua University emblem from Wikimedia Commons, public domain; they remain the universities' insignia and are used only to mark affiliation.
+- **PlugRL logo and clip** (`images/logo-plugrl.png`, `media/plugrl-libero*`): from the PlugRL project site, https://plugrl.github.io.
 - **Engraving** (`images/automaton-vaucanson.webp`, cropped and recoloured): Vaucanson's tambourine player from *Automates Vaucanson*, 18th-century engraving, public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Automates_Vaucanson.jpg).
 
 ## Lucide license
