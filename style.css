@@ -37,7 +37,7 @@
 
 :root {
     /* Night: sampled from the background of profile.jpg, so the photo has no visible edge */
-    --night: #080b21;
+    --night: #010726;
     --on-night: #eeecf8;
     --on-night-muted: #9b9ec4;
     --on-night-link: #cbb9f5;
@@ -139,7 +139,7 @@ body {
     line-height: 1.02;
     letter-spacing: -0.015em;
     color: var(--on-night);
-    text-shadow: 0 2px 18px rgba(8, 11, 33, 0.6);
+    text-shadow: 0 2px 18px rgba(1, 7, 38, 0.6);
 }
 
 .name-zh {
