@@ -86,9 +86,23 @@
                 <h2>News</h2>
                 <!-- Newest first. Add a line when a paper is submitted, posted to arXiv, or accepted. -->
                 <ul class="news-list">
+                    <li><span class="news-date">Oct 2026</span><span>Our paper with Chenhao Lu on <a href="papers/silent-faults-webp2026.pdf" target="_blank" rel="noopener">silent faults at the environment&ndash;trainer boundary</a> in RL was accepted to the CoRL 2026 Workshop on Everything Beneath the Policy.</span></li>
                     <li><span class="news-date">Sep 2026</span><span>Resumed <a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> with Chenhao Lu, now a wire protocol that lets environments running anywhere be trained by RL.</span></li>
                     <li><span class="news-date">Jun 2026</span><span>Joined Prof. Wei-Chiu Ma's group at Cornell as a research intern, working on shared perception between humanoids.</span></li>
                     <li><span class="news-date">Mar 2026</span><span>Started working with Prof. Ge Liu at UIUC on noise schedules in joint continuous&ndash;discrete diffusion.</span></li>
+                </ul>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2>Publications</h2>
+                <ul class="pub-list">
+                    <li>
+                        <!-- Once on arXiv, point the title and PDF links to the arXiv page. -->
+                        <span class="pub-title"><a href="papers/silent-faults-webp2026.pdf" target="_blank" rel="noopener">Detecting Silent Faults at the Environment&ndash;Trainer Boundary in Reinforcement Learning.</a></span>
+                        <span class="pub-authors"><strong>Zuo Gou</strong>*, Chenhao Lu* (*equal contribution).</span>
+                        <span class="pub-venue"><span class="status">Accepted</span>CoRL 2026 Workshop on Everything Beneath the Policy &middot; <a href="papers/silent-faults-webp2026.pdf" target="_blank" rel="noopener">PDF</a> &middot; <a href="https://github.com/PlugRL" target="_blank" rel="noopener">Code</a></span>
+                    </li>
                 </ul>
             </section>
 
@@ -165,6 +179,7 @@
                     <h3><a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> <span class="date-location">2025 &ndash; Present</span></h3>
                     <ul>
                         <li>With Chenhao Lu, co-developed PlugRL, a wire protocol between environments and RL trainers that lets environments on other machines, in other languages, or outside a trainer's cluster still be trained. Wrote the protocol specification and its conformance checkers.</li>
+                        <li>Showed that silent faults at the environment&ndash;trainer boundary mostly slip past learning-curve checks and clean evaluation, while a step ledger kept on both sides caught and located all 585 faulty runs it checked, for a median 3% of training time on Pendulum (<a href="#publications">CoRL 2026 workshop paper</a>).</li>
                     </ul>
                     <figure class="clip">
                         <video src="media/plugrl-libero.mp4" poster="media/plugrl-libero-poster.jpg" width="224" height="224" autoplay muted loop playsinline preload="metadata" aria-label="Robot arm in a LIBERO kitchen scene, driven by &pi;0.5 through PlugRL"></video>
