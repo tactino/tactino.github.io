@@ -1,27 +1,7 @@
 # Credits
 
-- **Fonts**: Source Serif 4 (Latin subset plus the single Greek glyph π) and Noto Serif SC, SIL Open Font License 1.1. See `fonts/README.md`.
-- **Icons** (mail, file-text, github, id-card, book-open, map-pin; inlined in `index.html`): [Lucide](https://lucide.dev) v0.460.0, ISC License, reproduced below.
-- **Seals** (`images/seal-*.png`, recoloured): Cornell University seal, University of Illinois seal and Tsinghua University emblem from Wikimedia Commons, public domain; they remain the universities' insignia and are used only to mark affiliation.
-- **PlugRL logo and clip** (`images/logo-plugrl.png`, `media/plugrl-libero*`): from the PlugRL project site, https://plugrl.github.io.
+- **Fonts**: Archivo (Omnibus-Type), Source Serif 4 (only the glyph π) and Noto Serif SC (only the two characters of the Chinese name), all SIL Open Font License 1.1. See `fonts/README.md`.
+- **Seals** (`images/seal-*.png`): Cornell University seal, University of Illinois seal and Tsinghua University emblem from Wikimedia Commons, public domain; they remain the universities' insignia and are used only to mark affiliation.
+- **PlugRL logo, clips and figure** (`images/logo-plugrl.png`, `images/coverage-grid.webp`, `media/plugrl-libero*`, `media/boundary-*`): from the PlugRL project site, https://plugrl.github.io. `media/boundary-highlights.mp4` is a 40-second silent excerpt of the paper's video there.
 - **Engraving** (`images/automaton-vaucanson.webp`, cropped and recoloured): Vaucanson's tambourine player from *Automates Vaucanson*, 18th-century engraving, public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Automates_Vaucanson.jpg).
-
-## Lucide license
-
-```
-ISC License
-
-Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-```
+- **Paper grain** (`images/grain.png`): generated noise.
