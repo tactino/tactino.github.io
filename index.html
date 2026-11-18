@@ -19,224 +19,237 @@
     <link rel="icon" href="favicon.ico?v=2" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
-    <!-- Fonts are self-hosted (fonts/, SIL OFL) so the page renders where Google Fonts is blocked. -->
-    <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Fonts are self-hosted (fonts/, SIL OFL) so the page renders where Google Fonts is blocked. Styles are in style.css. -->
+    <link rel="preload" href="fonts/archivo-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page">
 
-    <div class="page">
-        <!-- Sidebar: the portrait's own night-blue background becomes the column -->
-        <header class="sidebar">
-            <div class="sidebar-inner">
-                <img src="profile.jpg?v=2" alt="Portrait of Zuo Gou" class="portrait" width="804" height="804">
+  <header class="night">
+    <div class="night-inner">
+      <!-- Vaucanson's tambourine player (1738), engraving after Gravelot; public domain. -->
+      <div class="rail-art" aria-hidden="true"><img src="images/automaton-vaucanson.webp" alt="" width="420" height="760" decoding="async"></div>
+      <img class="portrait" src="profile.jpg?v=2" alt="Portrait of Zuo Gou" width="804" height="804">
+      <h1 class="name">Zuo Gou <span class="zh" lang="zh-Hans">苟左</span></h1>
+      <p class="affil">Undergraduate Student<br>Dept. of Automation<br>Tsinghua University</p>
 
-                <div class="identity">
-                    <h1 class="name">Zuo Gou <span class="name-zh" lang="zh-Hans">苟左</span></h1>
-                    <p class="affiliation">
-                        Undergraduate Student<br>
-                        Dept. of Automation<br>
-                        Tsinghua University
-                    </p>
-                </div>
+      <nav aria-label="On this page">
+        <ol class="index">
+          <li><a href="#about"><span class="t">About</span></a></li>
+          <li><a href="#news"><span class="t">News</span></a></li>
+          <li><a href="#publications"><span class="t">Publications</span></a></li>
+          <li><a href="#research"><span class="t">Research</span></a></li>
+          <li><a href="#open-source"><span class="t">Open source</span></a></li>
+          <li><a href="#education"><span class="t">Education</span></a></li>
+          <li><a href="cv.pdf"><span class="t">CV</span></a></li>
+        </ol>
+      </nav>
 
-                <!-- Icons: Lucide (ISC license), inlined -->
-                <nav class="links" aria-label="Contact and profiles">
-                    <a class="pill" href="mailto:gouz23@mails.tsinghua.edu.cn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>Email</a>
-                    <a class="pill" href="cv.pdf"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></svg>CV</a>
-                    <a class="pill" href="https://github.com/tactino" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /> <path d="M9 18c-4.51 2-5-2-7-2" /></svg>GitHub</a>
-                    <a class="pill" href="https://orcid.org/0009-0007-9764-8231" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10h2" /> <path d="M16 14h2" /> <path d="M6.17 15a3 3 0 0 1 5.66 0" /> <circle cx="9" cy="11" r="2" /> <rect x="2" y="5" width="20" height="14" rx="2" /></svg>ORCID</a>
-                    <a class="pill" href="https://openreview.net/profile?id=~Zuo_Gou1" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></svg>OpenReview</a>
-                </nav>
-
-                <p class="contact-note">
-                    <span>gouz23@<wbr>mails.tsinghua.edu.cn</span>
-                    <span class="place"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>Ithaca, NY</span>
-                </p>
-
-                <!-- Vaucanson's tambourine player (1738), engraving after Gravelot; public domain,
-                     via Wikimedia Commons "Automates Vaucanson.jpg". Recoloured as line art. -->
-                <div class="rail-art" aria-hidden="true">
-                    <img src="images/automaton-vaucanson.webp" alt="" width="420" height="760" decoding="async" fetchpriority="low">
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-
-            <!-- About -->
-            <section id="about" aria-labelledby="about-heading">
-                <h2 id="about-heading" class="visually-hidden">About</h2>
-                <p class="lede">
-                    I am an undergraduate student in Automation at <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a>.
-                    I work on <strong>embodied AI and robot learning</strong>, <strong>multi-agent coordination and inter-robot communication</strong>,
-                    <strong>reinforcement learning</strong>, and <strong>diffusion-based generative models</strong>.
-                </p>
-                <p>
-                    I am currently a research intern with Prof. Wei-Chiu Ma at Cornell University, asking when two robots
-                    need to share what they see &mdash; and what they should send. I also work with Prof. Ge Liu at UIUC
-                    on the theory of diffusion models that generate continuous and discrete quantities at once.
-                </p>
-                <p>I will be applying to PhD programs for Fall 2028.</p>
-            </section>
-
-            <!-- News -->
-            <section id="news">
-                <h2>News</h2>
-                <!-- Newest first. Add a line when a paper is submitted, posted to arXiv, or accepted. -->
-                <ul class="news-list">
-                    <li><span class="news-date">Nov 2026</span><span>Our CoRL 2026 workshop paper with Chenhao Lu is now on <a href="https://arxiv.org/abs/2611.08144" target="_blank" rel="noopener">arXiv</a>.</span></li>
-                    <li><span class="news-date">Oct 2026</span><span>Our paper with Chenhao Lu on <a href="https://arxiv.org/abs/2611.08144" target="_blank" rel="noopener">silent faults at the environment&ndash;trainer boundary</a> in RL was accepted to the CoRL 2026 Workshop on Everything Beneath the Policy.</span></li>
-                    <li><span class="news-date">Sep 2026</span><span>Resumed <a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> with Chenhao Lu, now a wire protocol that lets environments running anywhere be trained by RL.</span></li>
-                    <li><span class="news-date">Jun 2026</span><span>Joined Prof. Wei-Chiu Ma's group at Cornell as a research intern, working on shared perception between humanoids.</span></li>
-                    <li><span class="news-date">Mar 2026</span><span>Started working with Prof. Ge Liu at UIUC on noise schedules in joint continuous&ndash;discrete diffusion.</span></li>
-                </ul>
-            </section>
-
-            <!-- Publications -->
-            <section id="publications">
-                <h2>Publications</h2>
-                <ul class="pub-list">
-                    <li>
-                        <span class="pub-title"><a href="https://arxiv.org/abs/2611.08144" target="_blank" rel="noopener">Detecting Silent Faults at the Environment&ndash;Trainer Boundary in Reinforcement Learning.</a></span>
-                        <span class="pub-authors"><strong>Zuo Gou</strong>*, Chenhao Lu* (*equal contribution).</span>
-                        <span class="pub-venue"><span class="status">Accepted</span>CoRL 2026 Workshop on Everything Beneath the Policy &middot; <a href="https://arxiv.org/abs/2611.08144" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://arxiv.org/pdf/2611.08144" target="_blank" rel="noopener">PDF</a> &middot; <a href="https://github.com/PlugRL" target="_blank" rel="noopener">Code</a></span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Manuscripts -->
-            <section id="manuscripts">
-                <h2>Manuscripts</h2>
-                <ul class="pub-list">
-                    <li>
-                        <span class="pub-title">Humanoid2Humanoid: Shared Sensing for Cooperative Loco-Manipulation.</span>
-                        <!-- AUTHORS: complete the list -->
-                        <span class="pub-authors"><strong>Zuo Gou</strong> et al., Wei-Chiu Ma.</span>
-                        <span class="pub-venue"><span class="status status-draft">In preparation</span>Target: CVPR 2027</span>
-                    </li>
-                    <li>
-                        <span class="pub-title">Relative Noise Schedules in Joint Continuous&ndash;Discrete Diffusion.</span>
-                        <!-- AUTHORS: complete the list -->
-                        <span class="pub-authors"><strong>Zuo Gou</strong> et al.</span>
-                        <span class="pub-venue"><span class="status status-draft">In preparation</span>Target: ICML 2027</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Research Experience -->
-            <section id="research">
-                <h2>Research Experience</h2>
-
-                <div class="entry">
-                    <img class="seal" src="images/seal-cornell.png" alt="" width="36" height="36">
-                    <h3>Cornell University <span class="date-location">Jun 2026 &ndash; Nov 2026</span></h3>
-                    <span class="subtitle">Research Intern, Dept. of Computer Science &middot; Advisor: Prof. Wei-Chiu Ma</span>
-                    <ul>
-                        <li>Studying how two humanoids can share what they see in real time, so that a robot walking backward climbs stairs hidden from its own cameras by relying on its partner's view.</li>
-                        <li>Established when such sharing matters: robots usually infer hidden terrain from gait and contact, and only in specific conditions does the partner's view become indispensable, recovering 20&ndash;40 success points.</li>
-                        <li>Built decentralized policies that act on their own sensing plus messages from the partner, halt safely when the link drops and resume when it returns; demonstrated a simulated pair climbing stairs together.</li>
-                    </ul>
-                </div>
-
-                <div class="entry">
-                    <img class="seal" src="images/seal-illinois.png" alt="" width="36" height="36">
-                    <h3>University of Illinois Urbana-Champaign <span class="date-location">Mar 2026 &ndash; Present</span></h3>
-                    <span class="subtitle">Research Intern, Dept. of Computer Science &middot; Advisor: Prof. Ge Liu</span>
-                    <ul>
-                        <li>Studying how a diffusion model that generates continuous and discrete quantities at once &mdash; atom positions with atom types and bonds &mdash; should pace noise across its two channels, a choice now hand-tuned per dataset.</li>
-                        <li>Characterized when the likelihood bound is indifferent to that pacing and what the best schedule looks like when it is not, and confirmed the predictions on public molecular models.</li>
-                        <li>Showed that reported likelihoods are dominated by a single coarse step of the sampler, and built an estimator reaching the same precision with roughly 2,600&times; less computation.</li>
-                    </ul>
-                </div>
-
-                <div class="entry">
-                    <img class="seal" src="images/seal-tsinghua.png" alt="" width="36" height="36">
-                    <h3>Tsinghua University, IIIS <span class="date-location">Jul 2025 &ndash; Jan 2026</span></h3>
-                    <span class="subtitle">Research Assistant &middot; Advisor: Prof. Huazhe Xu</span>
-                    <ul>
-                        <li>Started <a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> with Chenhao Lu; the project continues as open source (see below).</li>
-                    </ul>
-                </div>
-
-                <div class="entry">
-                    <img class="seal" src="images/seal-tsinghua.png" alt="" width="36" height="36">
-                    <h3>Tsinghua University, Dept. of Automation <span class="date-location">Sep 2024 &ndash; Jun 2025</span></h3>
-                    <span class="subtitle">Research Assistant &middot; Advisor: Prof. Yebin Liu</span>
-                    <ul>
-                        <li>Developed a diffusion model that generates physically plausible hand&ndash;object interaction for dexterous manipulation, with the simulation environments and demonstration pipelines it was trained on.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Open Source -->
-            <section id="open-source">
-                <h2>Open Source</h2>
-
-                <div class="entry">
-                    <img class="seal" src="images/logo-plugrl.png" alt="" width="36" height="36">
-                    <h3><a href="https://plugrl.github.io" target="_blank" rel="noopener">PlugRL</a> <span class="date-location">2025 &ndash; Present</span></h3>
-                    <ul>
-                        <li>With Chenhao Lu, co-developed PlugRL, a wire protocol between environments and RL trainers that lets environments on other machines, in other languages, or outside a trainer's cluster still be trained. Wrote the protocol specification and its conformance checkers.</li>
-                        <li>Showed that silent faults at the environment&ndash;trainer boundary mostly slip past learning-curve checks and clean evaluation, while a step ledger kept on both sides caught and located all 585 faulty runs it checked, for a median 3% of training time on Pendulum (<a href="#publications">CoRL 2026 workshop paper</a>).</li>
-                    </ul>
-                    <figure class="clip">
-                        <video src="media/plugrl-libero.mp4" poster="media/plugrl-libero-poster.jpg" width="224" height="224" autoplay muted loop playsinline preload="metadata" aria-label="Robot arm in a LIBERO kitchen scene, driven by &pi;0.5 through PlugRL"></video>
-                        <figcaption>&pi;0.5 acting in LIBERO through PlugRL's wire protocol: the simulator runs in its own process, the policy on the server.</figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section id="education">
-                <h2>Education</h2>
-
-                <div class="entry">
-                    <img class="seal" src="images/seal-tsinghua.png" alt="" width="36" height="36">
-                    <h3>Tsinghua University <span class="date-location">Sep 2023 &ndash; Expected Jun 2028</span></h3>
-                    <span class="subtitle">B.Eng. in Automation (Xinya College &amp; Dept. of Automation)</span>
-                    <ul>
-                        <li>GPA: 3.8/4.0</li>
-                        <li>Tsinghua Comprehensive Scholarship (2024, 2025); Luo Yuehua Scholarship (2024)</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Skills -->
-            <section id="skills">
-                <h2>Technical Skills</h2>
-                <table class="skills-table">
-                    <tr>
-                        <th scope="row">Programming</th>
-                        <td>Python (PyTorch), C++, CUDA, MATLAB, Shell</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Robotics &amp; simulation</th>
-                        <td>IsaacGym, Isaac Lab, MuJoCo, Legged Gym, RSL-RL</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Infrastructure</th>
-                        <td>Linux, Slurm clusters, distributed multi-GPU training, Weights &amp; Biases</td>
-                    </tr>
-                </table>
-            </section>
-
-            <footer class="page-footer">Last updated November 2026</footer>
-
-        </main>
+      <div class="contacts">
+        <nav aria-label="Contact and profiles">
+          <a href="mailto:gouz23@mails.tsinghua.edu.cn">Email</a>
+          <a href="cv.pdf">CV</a>
+          <a href="https://github.com/tactino">GitHub</a>
+          <a href="https://orcid.org/0009-0007-9764-8231">ORCID</a>
+          <a href="https://openreview.net/profile?id=~Zuo_Gou1">OpenReview</a>
+        </nav>
+        <p>gouz23@<wbr>mails.tsinghua.edu.cn<br>Ithaca, NY</p>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // Clips autoplay muted. Pause them off screen; for reduced-motion users, stop and show controls instead.
-        (() => {
-            const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-            document.querySelectorAll("video[autoplay]").forEach((v) => {
-                if (still) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; return; }
-                new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()),
-                                         { threshold: 0.25 }).observe(v);
-            });
-        })();
-    </script>
+  <main class="content">
+
+
+    <section class="block" id="about">
+      <div class="grid">
+        <div class="head"><h2>About</h2></div>
+        <div class="body">
+          <p class="lede">I am an undergraduate in the Department of Automation at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>. My research covers embodied AI and robot learning, multi-robot coordination and communication, reinforcement learning, and diffusion models.</p>
+          <p>I am a research intern in Prof. Wei-Chiu Ma's group at Cornell University, where I study when two humanoid robots should share perception and what they should exchange. I also work with Prof. Ge Liu at UIUC on diffusion models that generate protein sequences and structures together.</p>
+          <p>I plan to apply to PhD programs for Fall 2028 admission.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="news">
+      <div class="grid">
+        <div class="head"><h2>News</h2></div>
+        <div class="body">
+          <ul class="news">
+            <li><span class="d">Nov 2026</span><span>Presented our paper as a poster at the CoRL 2026 Workshop on Everything Beneath the Policy in Austin.</span></li>
+            <li><span class="d">Nov 2026</span><span>Our CoRL 2026 workshop paper with Chenhao Lu is now on <a href="https://arxiv.org/abs/2611.08144">arXiv</a>.</span></li>
+            <li><span class="d">Oct 2026</span><span>Our paper with Chenhao Lu, <a href="https://arxiv.org/abs/2611.08144"><i>Detecting Silent Faults at the Environment&ndash;Trainer Boundary in Reinforcement Learning</i></a>, was accepted to the CoRL 2026 Workshop on Everything Beneath the Policy.</span></li>
+            <li><span class="d">Oct 2026</span><span>Released <a href="https://github.com/PlugRL/step-ledger">step-ledger</a>, a package that adds the paper&rsquo;s step ledger to Gymnasium and Stable-Baselines3 training.</span></li>
+            <li><span class="d">Sep 2026</span><span>Resumed <a href="https://plugrl.github.io">PlugRL</a> with Chenhao Lu, now developed as a wire protocol between RL trainers and environments.</span></li>
+            <li><span class="d">Jun 2026</span><span>Joined Prof. Wei-Chiu Ma's group at Cornell as a research intern, working on perception sharing between humanoid robots.</span></li>
+            <li><span class="d">Mar 2026</span><span>Began working with Prof. Ge Liu at UIUC on diffusion models that generate continuous and discrete data together, now applied to protein design.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="publications">
+      <div class="grid">
+        <div class="head"><h2>Publications</h2></div>
+        <div class="body">
+          <ul class="rows">
+            <li class="row">
+              <div class="meta"><span class="tag filled">Accepted</span><br>CoRL 2026 Workshop on Everything Beneath the Policy</div>
+              <div class="text">
+                <p class="title"><a href="https://arxiv.org/abs/2611.08144">Detecting Silent Faults at the Environment&ndash;Trainer Boundary in Reinforcement Learning</a></p>
+                <p class="authors"><strong>Zuo Gou</strong>*, Chenhao Lu*<span class="note">*Equal contribution</span></p>
+                <p class="more"><a href="https://arxiv.org/abs/2611.08144">arXiv</a><a href="https://arxiv.org/pdf/2611.08144">PDF</a><a href="https://github.com/PlugRL">Code</a><a href="https://plugrl.github.io/#when-the-boundary-is-wrong-nothing-says-so">Project page</a></p>
+                <details class="bib"><summary>BibTeX</summary><pre>@inproceedings{gou2026silent,
+  title={Detecting Silent Faults at the Environment-Trainer Boundary in Reinforcement Learning},
+  author={Gou, Zuo and Lu, Chenhao},
+  booktitle={CoRL 2026 Workshop on Everything Beneath the Policy},
+  year={2026},
+  eprint={2611.08144},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2611.08144}
+}</pre></details>
+              </div>
+              <figure class="teaser">
+                <video src="media/boundary-highlights.mp4" poster="media/boundary-poster.webp" width="1280" height="720" muted loop playsinline preload="none" controls aria-label="Excerpt from the paper video: three HalfCheetah runs, one with a single observation changed at the boundary; all three learn, and only records kept on both sides of the boundary show the difference"></video>
+                <figcaption>A value changed at the environment&ndash;trainer boundary raises no error, and the policy still learns. Learning curves do not show it; records kept on both sides of the boundary do. 40-second excerpt, silent. <a href="https://plugrl.github.io/#when-the-boundary-is-wrong-nothing-says-so">Full video</a></figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="block" id="research">
+      <div class="grid">
+        <div class="head"><h2>Research experience</h2></div>
+        <div class="body">
+          <ul class="rows">
+            <li class="row">
+              <div class="meta"><img class="seal" src="images/seal-cornell.png" alt=""><span class="org">Cornell University</span>Research Intern, Dept. of Computer Science<br>Advisor: Prof. Wei-Chiu Ma<br><span class="tnum">Jun 2026 &ndash; Present</span></div>
+              <div class="text">
+                <ul>
+                  <li>Developing real-time perception sharing between two humanoid robots, so that a robot walking backward can climb stairs it cannot see using its partner's view.</li>
+                  <li>Showed that robots can usually infer hidden terrain from gait and contact alone, and identified the settings where the partner's view is necessary. In those settings it raises success rates by 20&ndash;40 percentage points.</li>
+                  <li>Built decentralized policies that combine onboard sensing with messages from the partner, stop safely when the link drops, and resume when it returns. Demonstrated two simulated humanoids climbing stairs together.</li>
+                </ul>
+                <p class="ms"><span class="tag outline">In preparation</span><span><i>Humanoid2Humanoid: Shared Sensing for Cooperative Loco-Manipulation</i>. Target: RSS 2027.</span></p>
+              </div>
+            </li>
+            <li class="row">
+              <div class="meta"><img class="seal" src="images/seal-illinois.png" alt=""><span class="org">University of Illinois Urbana-Champaign</span>Research Intern, Dept. of Computer Science<br>Advisor: Prof. Ge Liu<br><span class="tnum">Mar 2026 &ndash; Present</span></div>
+              <div class="text">
+                <ul>
+                  <li>Studying protein sequence&ndash;structure co-design in which the sequence is generated by continuous diffusion over learned amino-acid embeddings, built on MultiFlow with its structure module unchanged.</li>
+                  <li>Showed that the continuous sequence channel is not limited by its representation, while its derived likelihood term must be tempered for proteins. Traced this to the small vocabulary: 20 embeddings can form a regular simplex, which overstates per-position evidence.</li>
+                  <li>Located the remaining gap. Co-designed backbones now match the masked-discrete baseline, and the deficit lies in writing sequences for the model&rsquo;s own backbones. Built a test that predicts whether a gain in accuracy will turn into more designable structures.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="row">
+              <div class="meta"><img class="seal" src="images/seal-tsinghua.png" alt=""><span class="org">Tsinghua University, IIIS</span>Research Assistant<br>Advisor: Prof. Huazhe Xu<br><span class="tnum">Jul 2025 &ndash; Jan 2026</span></div>
+              <div class="text">
+                <ul>
+                  <li>Started <a href="https://plugrl.github.io">PlugRL</a> with Chenhao Lu (see Open source).</li>
+                </ul>
+              </div>
+            </li>
+            <li class="row">
+              <div class="meta"><img class="seal" src="images/seal-tsinghua.png" alt=""><span class="org">Tsinghua University, Dept. of Automation</span>Research Assistant<br>Advisor: Prof. Yebin Liu<br><span class="tnum">Sep 2024 &ndash; Jun 2025</span></div>
+              <div class="text">
+                <ul>
+                  <li>Developed a diffusion model that generates physically plausible hand&ndash;object interactions for dexterous manipulation, together with the simulation environments and demonstration pipelines used to train it.</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="open-source">
+      <div class="grid">
+        <div class="head"><h2>Open source</h2></div>
+        <div class="body">
+          <ul class="rows">
+            <li class="row">
+              <div class="meta"><img class="seal" src="images/logo-plugrl.png" alt=""><span class="org"><a href="https://plugrl.github.io">PlugRL</a></span>with Chenhao Lu and Zilin Kang<br><span class="tnum">2025 &ndash; Present</span></div>
+              <div class="text">
+                <ul>
+                  <li>Co-developed a wire protocol between RL trainers and environments, so that environments on other machines, in other languages, or outside the training cluster can still be trained. Wrote the protocol specification and its conformance checkers.</li>
+                  <li>Showed that most silent faults at the environment&ndash;trainer boundary pass learning-curve checks and clean evaluation undetected. A step ledger kept on both sides detected and located all 585 faulty runs tested, at a median cost of 3% of training time on Pendulum (<a href="#publications">CoRL 2026 workshop paper</a>).</li>
+                  <li>Released the step ledger as <a href="https://github.com/PlugRL/step-ledger">step-ledger</a>, a package for Gymnasium and Stable-Baselines3.</li>
+                </ul>
+              </div>
+              <div class="media-pair">
+                <figure class="grid-fig"><a href="https://plugrl.github.io/#what-runs-on-it"><img src="images/coverage-grid.webp" width="900" height="990" loading="lazy" alt="A four-by-four grid of final policies from four policy and algorithm pairings: three MuJoCo tasks learned from scratch and robomimic square fine-tuned from pretrained policies, every cell marked learns"></a>
+                  <figcaption>Four policy&ndash;algorithm pairings trained through PlugRL: learning HalfCheetah, Hopper and Walker2d, and fine-tuning from pretrained policies on robomimic square. The line under each clip is the training curve of three seeds.</figcaption></figure>
+                <figure class="vla-fig">
+                  <video src="media/plugrl-libero.mp4" poster="media/plugrl-libero-poster.jpg" width="224" height="224" muted loop playsinline preload="none" controls aria-label="Robot arm in a LIBERO kitchen scene, driven by &pi;0.5 through PlugRL"></video>
+                  <figcaption>&pi;0.5 performing a LIBERO task through PlugRL. The simulator runs in its own process and the policy runs on the server.</figcaption>
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="education">
+      <div class="grid">
+        <div class="head"><h2>Education</h2></div>
+        <div class="body">
+          <div class="table"><span class="k"><img src="images/seal-tsinghua.png" alt="">Tsinghua University</span><span class="v2">B.Eng. in Automation (Xinya College &amp; Dept. of Automation)<br>Tsinghua Comprehensive Scholarship (2024, 2025); Luo Yuehua Scholarship (2024)<span class="d">Sep 2023 &ndash; Expected Jun 2028</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="service">
+      <div class="grid">
+        <div class="head"><h2>Service</h2></div>
+        <div class="body">
+          <div class="table"><span class="k">Reviewer</span><span class="v2">CoRL 2026 Workshop on Everything Beneath the Policy</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer><span>Last updated November 2026</span><span>Zuo Gou <span class="zh" lang="zh-Hans">苟左</span></span></footer>
+  </main>
+</div>
+
+<script>
+// Scroll-spy: mark the index entry whose section is being read. Without JS the index is plain anchor links.
+(() => {
+  const links = new Map();
+  document.querySelectorAll('.index a[href^="#"]').forEach(a => links.set(a.getAttribute('href').slice(1), a));
+  // Manuscripts and skills share an index entry with the section before them.
+  const alias = { manuscripts: 'publications', skills: 'education', service: 'education' };
+  const sections = [...document.querySelectorAll('section.block[id]')];
+  const set = id => links.forEach((a, k) => a.setAttribute('aria-current', k === id ? 'true' : 'false'));
+  // The current section is the last one whose top has passed 30% of the viewport.
+  const update = () => {
+    const line = innerHeight * 0.3; let cur = sections[0].id;
+    for (const s of sections) if (s.getBoundingClientRect().top <= line) cur = s.id;
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) cur = sections[sections.length - 1].id;
+    set(alias[cur] || cur);
+  };
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+})();
+// Clip: autoplay muted only in view; reduced-motion users (and no-JS) keep the controls instead.
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('figure video').forEach(v => {
+    if (still) return;
+    v.controls = false;
+    new IntersectionObserver(([e]) => e.isIntersecting ? v.play().catch(() => {}) : v.pause(), { threshold: 0.25 }).observe(v);
+  });
+})();
+</script>
 </body>
 </html>
